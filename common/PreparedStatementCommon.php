@@ -285,10 +285,21 @@ abstract class PreparedStatementCommon {
         $sql = '';
         $last_position = 0;
 
+        if (!$this->positionsCount)
+        {
+        	$this->positionsCount = count($this->boundInVars);
+		}
+
         for ($position = 0; $position < $this->positionsCount; $position++) {
             if (!isset($this->boundInVars[$position + 1])) {
                 throw new SQLException('Replace params: undefined query param: ' . ($position + 1));
             }
+
+            if (empty($this->positions[$position]))
+            {
+            	$this->positions[$position] = strpos($this->sql, '?', $last_position);
+			}
+
             $current_position = $this->positions[$position];
             $sql .= substr($this->sql, $last_position, $current_position - $last_position);
             $sql .= $this->boundInVars[$position + 1];
