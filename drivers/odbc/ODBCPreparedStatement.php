@@ -19,9 +19,9 @@
  * <http://creole.phpdb.org>.
  */
 
-require_once 'creole/PreparedStatement.php';
-require_once 'creole/common/PreparedStatementCommon.php';
-require_once 'creole/util/Lob.php';
+require_once CREOLE_ROOT . 'PreparedStatement.php';
+require_once CREOLE_ROOT . 'common/PreparedStatementCommon.php';
+require_once CREOLE_ROOT . 'util/Lob.php';
 
 /**
  * ODBC specific PreparedStatement functions.

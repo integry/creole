@@ -19,7 +19,7 @@
  * <http://creole.phpdb.org>.
  */
 
-require_once 'creole/metadata/TableInfo.php';
+require_once CREOLE_ROOT . 'metadata/TableInfo.php';
 
 /**
  * MySQLi implementation of TableInfo.
@@ -32,8 +32,8 @@ class MySQLiTableInfo extends TableInfo {
     /** Loads the columns for this table. */
     protected function initColumns()
     {
-        require_once 'creole/metadata/ColumnInfo.php';
-        require_once 'creole/drivers/mysql/MySQLTypes.php';
+        require_once CREOLE_ROOT . 'metadata/ColumnInfo.php';
+        require_once CREOLE_ROOT . 'drivers/mysql/MySQLTypes.php';
 
         // To get all of the attributes we need, we use
         // the MySQL "SHOW COLUMNS FROM $tablename" SQL.
@@ -79,7 +79,7 @@ class MySQLiTableInfo extends TableInfo {
     /** Loads the primary key information for this table. */
     protected function initPrimaryKey()
     {
-        require_once 'creole/metadata/PrimaryKeyInfo.php';
+        require_once CREOLE_ROOT . 'metadata/PrimaryKeyInfo.php';
 
         // columns have to be loaded first
         if (!$this->colsLoaded) {
@@ -105,7 +105,7 @@ class MySQLiTableInfo extends TableInfo {
 
     /** Loads the indexes for this table. */
     protected function initIndexes() {
-        require_once 'creole/metadata/IndexInfo.php';
+        require_once CREOLE_ROOT . 'metadata/IndexInfo.php';
 
         // columns have to be loaded first
         if (!$this->colsLoaded) {

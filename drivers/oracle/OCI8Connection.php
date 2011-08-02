@@ -20,9 +20,9 @@
  * <http://creole.phpdb.org>.
  */
 
-include_once('creole/Connection.php');//require_once 'creole/Connection.php';
-include_once('creole/common/ConnectionCommon.php');//require_once 'creole/common/ConnectionCommon.php';
-include_once('creole/drivers/oracle/OCI8ResultSet.php');//include_once 'creole/drivers/oracle/OCI8ResultSet.php';
+include_once(CREOLE_ROOT . 'Connection.php');//require_once CREOLE_ROOT . 'Connection.php';
+include_once(CREOLE_ROOT . 'common/ConnectionCommon.php');//require_once CREOLE_ROOT . 'common/ConnectionCommon.php';
+include_once(CREOLE_ROOT . 'drivers/oracle/OCI8ResultSet.php');//include_once CREOLE_ROOT . 'drivers/oracle/OCI8ResultSet.php';
 
 /**
  * Oracle implementation of Connection.
@@ -343,7 +343,7 @@ class OCI8Connection extends ConnectionCommon implements Connection
      */
     public function getDatabaseInfo()
     {
-        require_once 'creole/drivers/oracle/metadata/OCI8DatabaseInfo.php';
+        require_once CREOLE_ROOT . 'drivers/oracle/metadata/OCI8DatabaseInfo.php';
 
         return new OCI8DatabaseInfo( $this );
     }
@@ -353,7 +353,7 @@ class OCI8Connection extends ConnectionCommon implements Connection
      */
     public function getIdGenerator()
     {
-        require_once 'creole/drivers/oracle/OCI8IdGenerator.php';
+        require_once CREOLE_ROOT . 'drivers/oracle/OCI8IdGenerator.php';
 
         return new OCI8IdGenerator( $this );
     }
@@ -368,7 +368,7 @@ class OCI8Connection extends ConnectionCommon implements Connection
      */
     public function prepareStatement( $sql )
     {
-        require_once 'creole/drivers/oracle/OCI8PreparedStatement.php';
+        require_once CREOLE_ROOT . 'drivers/oracle/OCI8PreparedStatement.php';
 
         return new OCI8PreparedStatement( $this, $sql );
     }
@@ -386,7 +386,7 @@ class OCI8Connection extends ConnectionCommon implements Connection
      */
     public function createStatement()
     {
-        require_once 'creole/drivers/oracle/OCI8Statement.php';
+        require_once CREOLE_ROOT . 'drivers/oracle/OCI8Statement.php';
 
         return new OCI8Statement( $this );
     }

@@ -19,7 +19,7 @@
  * <http://creole.phpdb.org>.
  */
 
-require_once 'creole/metadata/DatabaseInfo.php';
+require_once CREOLE_ROOT . 'metadata/DatabaseInfo.php';
 
 /**
  * Oracle (OCI8) implementation of DatabaseInfo.
@@ -57,7 +57,7 @@ class OCI8DatabaseInfo extends DatabaseInfo {
      */
     protected function initTables()
     {
-        include_once('creole/drivers/oracke/metadata/OCI8TableInfo.php');//include_once 'creole/drivers/oracle/metadata/OCI8TableInfo.php';
+        include_once(CREOLE_ROOT . 'drivers/oracke/metadata/OCI8TableInfo.php');//include_once CREOLE_ROOT . 'drivers/oracle/metadata/OCI8TableInfo.php';
 
         $sql = "SELECT table_name
             FROM all_tables

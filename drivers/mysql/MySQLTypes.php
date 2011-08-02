@@ -20,7 +20,7 @@
  * <http://creole.phpdb.org>.
  */
 
-include_once('creole/CreoleTypes.php');//require_once 'lib/creole/CreoleTypes.php';
+include_once(CREOLE_ROOT . 'CreoleTypes.php');//require_once 'lib/creole/CreoleTypes.php';
 
 /**
  * MySQL types / type map.

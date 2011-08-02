@@ -19,8 +19,8 @@
  * <http://creole.phpdb.org>.
  */
  
-require_once 'creole/ResultSet.php';
-require_once 'creole/common/ResultSetCommon.php';
+require_once CREOLE_ROOT . 'ResultSet.php';
+require_once CREOLE_ROOT . 'common/ResultSetCommon.php';
 
 /**
  * Oracle (OCI8) implementation of ResultSet class.

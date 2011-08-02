@@ -19,8 +19,10 @@
  * <http://creole.phpdb.org>.
  */
 
-include_once('creole/SQLException.php');//include_once 'lib/creole/SQLException.php';
-include_once('creole/Connection.php');;//include_once 'lib/creole/Connection.php';
+define('CREOLE_ROOT', dirname(__FILE__) . DIRECTORY_SEPARATOR);
+
+include_once(CREOLE_ROOT . 'SQLException.php');//include_once 'lib/creole/SQLException.php';
+include_once(CREOLE_ROOT . 'Connection.php');;//include_once 'lib/creole/Connection.php';
 
 // static:
 // track errors is used by drivers to get better error messages
@@ -119,7 +121,7 @@ class Creole {
      * @param string $phptype   The phptype (mysql, mssql, etc.). This is first part of DSN URL (e.g. mysql://localhost/...).
      *                          You may also specify '*' to register a driver that will "wrap" the any native drivers.
      * @param string $dotpath   A dot-path locating your class.  For example 'creole.drivers.mssql.MSSQLConnection'
-     *                          will be included like: include 'creole/drivers/mssql/MSSQLConnection.php' and the
+     *                          will be included like: include CREOLE_ROOT . 'drivers/mssql/MSSQLConnection.php' and the
      *                          classname will be assumed to be 'MSSQLConnection'.
      * @return void
      */

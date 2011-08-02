@@ -20,7 +20,7 @@
  * <http://creole.phpdb.org>.
  */
  
-require_once 'creole/CreoleTypes.php';
+require_once CREOLE_ROOT . 'CreoleTypes.php';
 
 /**
  * PostgreSQL types / type map.

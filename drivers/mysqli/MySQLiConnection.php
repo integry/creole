@@ -19,9 +19,9 @@
  * <http://creole.phpdb.org>.
  */
 
-include_once('creole/Connection.php');//require_once 'creole/Connection.php';
-include_once('creole/common/ConnectionCommon.php');//require_once 'creole/common/ConnectionCommon.php';
-include_once('creole/drivers/mysqli/MySQLiResultSet.php');//include_once 'creole/drivers/mysqli/MySQLiResultSet.php';
+include_once(CREOLE_ROOT . 'Connection.php');//require_once CREOLE_ROOT . 'Connection.php';
+include_once(CREOLE_ROOT . 'common/ConnectionCommon.php');//require_once CREOLE_ROOT . 'common/ConnectionCommon.php';
+include_once(CREOLE_ROOT . 'drivers/mysqli/MySQLiResultSet.php');//include_once CREOLE_ROOT . 'drivers/mysqli/MySQLiResultSet.php';
 
 /**
  * MySQLi implementation of Connection.
@@ -100,7 +100,7 @@ class MySQLiConnection extends ConnectionCommon implements Connection {
      */
     public function getDatabaseInfo()
     {
-        require_once 'creole/drivers/mysqli/metadata/MySQLiDatabaseInfo.php';
+        require_once CREOLE_ROOT . 'drivers/mysqli/metadata/MySQLiDatabaseInfo.php';
         return new MySQLiDatabaseInfo($this);
     }
 
@@ -109,7 +109,7 @@ class MySQLiConnection extends ConnectionCommon implements Connection {
      */
     public function getIdGenerator()
     {
-        require_once 'creole/drivers/mysqli/MySQLiIdGenerator.php';
+        require_once CREOLE_ROOT . 'drivers/mysqli/MySQLiIdGenerator.php';
         return new MySQLiIdGenerator($this);
     }
 
@@ -118,7 +118,7 @@ class MySQLiConnection extends ConnectionCommon implements Connection {
      */
     public function prepareStatement($sql)
     {
-        require_once 'creole/drivers/mysqli/MySQLiPreparedStatement.php';
+        require_once CREOLE_ROOT . 'drivers/mysqli/MySQLiPreparedStatement.php';
         return new MySQLiPreparedStatement($this, $sql);
     }
 
@@ -134,7 +134,7 @@ class MySQLiConnection extends ConnectionCommon implements Connection {
      */
     public function createStatement()
     {
-        require_once 'creole/drivers/mysqli/MySQLiStatement.php';
+        require_once CREOLE_ROOT . 'drivers/mysqli/MySQLiStatement.php';
         return new MySQLiStatement($this);
     }
 

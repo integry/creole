@@ -19,7 +19,7 @@
  * <http://creole.phpdb.org>.
  */
 
-require_once 'creole/metadata/TableInfo.php';
+require_once CREOLE_ROOT . 'metadata/TableInfo.php';
 
 /**
  * ODBC implementation of TableInfo.
@@ -35,8 +35,8 @@ class ODBCTableInfo extends TableInfo {
      */
     protected function initColumns()
     {
-        include_once('creole/metadata/ColumnInfo.php');//include_once 'creole/metadata/ColumnInfo.php';
-        include_once('creole/drivers/odbc/ODBCTypes.php');//include_once 'creole/drivers/odbc/ODBCTypes.php';
+        include_once(CREOLE_ROOT . 'metadata/ColumnInfo.php');//include_once CREOLE_ROOT . 'metadata/ColumnInfo.php';
+        include_once(CREOLE_ROOT . 'drivers/odbc/ODBCTypes.php');//include_once CREOLE_ROOT . 'drivers/odbc/ODBCTypes.php';
 
         ODBCTypes::loadTypeMap($this->conn);
 
@@ -67,7 +67,7 @@ class ODBCTableInfo extends TableInfo {
      */
     protected function initPrimaryKey()
     {
-        include_once('creole/metadata/PrimaryKeyInfo.php');//include_once 'creole/metadata/PrimaryKeyInfo.php';
+        include_once(CREOLE_ROOT . 'metadata/PrimaryKeyInfo.php');//include_once CREOLE_ROOT . 'metadata/PrimaryKeyInfo.php';
 
         // columns have to be loaded first
         if (!$this->colsLoaded) $this->initColumns();

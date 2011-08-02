@@ -1,6 +1,6 @@
 <?php
 
-include_once('creole/IdGenerator.php');//require_once 'creole/IdGenerator.php';
+include_once(CREOLE_ROOT . 'IdGenerator.php');//require_once CREOLE_ROOT . 'IdGenerator.php';
 
 /**
  * MSSQL IdGenerator implimenation.

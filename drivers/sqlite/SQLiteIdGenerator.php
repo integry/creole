@@ -1,6 +1,6 @@
 <?php
 
-require_once 'creole/IdGenerator.php';
+require_once CREOLE_ROOT . 'IdGenerator.php';
 
 /**
  * SQLite IdGenerator implimenation.

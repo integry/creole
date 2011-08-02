@@ -19,8 +19,8 @@
  * <http://creole.phpdb.org>.
  */
 
-include_once('creole/CreoleTypes.php');//require_once 'creole/CreoleTypes.php';
-include_once('creole/metadata/TableInfo.php');//require_once 'creole/metadata/TableInfo.php';
+include_once(CREOLE_ROOT . 'CreoleTypes.php');//require_once CREOLE_ROOT . 'CreoleTypes.php';
+include_once(CREOLE_ROOT . 'metadata/TableInfo.php');//require_once CREOLE_ROOT . 'metadata/TableInfo.php';
 
 /**
  * MSSQL implementation of TableInfo.
@@ -37,8 +37,8 @@ class MSSQLTableInfo extends TableInfo {
      */
     protected function initColumns()
     {
-        include_once('creole/metadata/ColumnInfo.php');//include_once 'creole/metadata/ColumnInfo.php';
-        include_once('creole/drivers/mssql/MSSQLTypes.php');//include_once 'creole/drivers/mssql/MSSQLTypes.php';
+        include_once(CREOLE_ROOT . 'metadata/ColumnInfo.php');//include_once CREOLE_ROOT . 'metadata/ColumnInfo.php';
+        include_once(CREOLE_ROOT . 'drivers/mssql/MSSQLTypes.php');//include_once CREOLE_ROOT . 'drivers/mssql/MSSQLTypes.php';
 
         if (!@mssql_select_db($this->dbname, $this->conn->getResource())) {
             throw new SQLException('No database selected');
@@ -75,7 +75,7 @@ class MSSQLTableInfo extends TableInfo {
     {
         // columns have to be loaded first
         if (!$this->colsLoaded) $this->initColumns();
-        include_once('creole/metadata/IndexInfo.php');//include_once 'creole/metadata/IndexInfo.php';
+        include_once(CREOLE_ROOT . 'metadata/IndexInfo.php');//include_once CREOLE_ROOT . 'metadata/IndexInfo.php';
 
         if (!@mssql_select_db($this->dbname, $this->conn->getResource())) {
             throw new SQLException('No database selected');
@@ -103,7 +103,7 @@ class MSSQLTableInfo extends TableInfo {
     {
         // columns have to be loaded first
         if (!$this->colsLoaded) $this->initColumns();
-        include_once 'creole/metadata/ForeignKeyInfo.php';
+        include_once CREOLE_ROOT . 'metadata/ForeignKeyInfo.php';
 
         if (!@mssql_select_db($this->dbname, $this->conn->getResource())) {
             throw new SQLException('No database selected');
@@ -154,7 +154,7 @@ class MSSQLTableInfo extends TableInfo {
     {
         // columns have to be loaded first
         if (!$this->colsLoaded) $this->initColumns();
-        include_once('creole/metadata/PrimaryKeyInfo.php');//include_once 'creole/metadata/PrimaryKeyInfo.php';
+        include_once(CREOLE_ROOT . 'metadata/PrimaryKeyInfo.php');//include_once CREOLE_ROOT . 'metadata/PrimaryKeyInfo.php';
 
         if (!@mssql_select_db($this->dbname, $this->conn->getResource())) {
             throw new SQLException('No database selected');
