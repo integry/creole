@@ -285,10 +285,7 @@ abstract class PreparedStatementCommon {
         $sql = '';
         $last_position = 0;
 
-        if (!$this->positionsCount)
-        {
-        	$this->positionsCount = count($this->boundInVars);
-		}
+       	$this->positionsCount = count($this->boundInVars);
 
         for ($position = 0; $position < $this->positionsCount; $position++) {
             if (!isset($this->boundInVars[$position + 1])) {
